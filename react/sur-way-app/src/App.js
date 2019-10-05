@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
 
 class App extends Component {
 
@@ -30,7 +32,12 @@ class App extends Component {
         />
 
 
-        <input type="submit" value="Submit" />
+        {/* <input type="submit" value="Submit" /> */}
+
+        <Button variant="contained" type="submit" color="primary">
+          Hello World
+        </Button>
+
       </form>
     )
   }
