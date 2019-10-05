@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactDOM from 'react-dom';
+import Header from './components/layout/Header';
 import Button from '@material-ui/core/Button';
 
 class App extends Component {
@@ -23,22 +23,24 @@ class App extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className='App'>
+        <div className='container'>
+          <Header />
+        </div>
+        <form onSubmit={this.handleSubmit}>
 
-        <input
-          type="text"
-          defaultvalue={this.state.username}
-          onChange={this.handleChange}
-        />
+          <input
+            type="text"
+            defaultvalue={this.state.username}
+            onChange={this.handleChange}
+          />
 
-
-        {/* <input type="submit" value="Submit" /> */}
-
-        <Button variant="contained" type="submit" color="primary">
-          Hello World
+          <Button variant="contained" type="submit" color="primary">
+            Hello World
         </Button>
 
-      </form>
+        </form>
+      </div>
     )
   }
 
