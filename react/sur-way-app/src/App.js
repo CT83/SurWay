@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/layout/Header';
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 class App extends Component {
 
@@ -24,22 +27,23 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <div className='container'>
-          <Header />
-        </div>
-        <form onSubmit={this.handleSubmit}>
+        <Header />
+        <Container fixed>
 
-          <input
-            type="text"
-            defaultvalue={this.state.username}
-            onChange={this.handleChange}
-          />
+          <form onSubmit={this.handleSubmit}>
 
-          <Button variant="contained" type="submit" color="primary">
-            Hello World
+            <input
+              type="text"
+              defaultvalue={this.state.username}
+              onChange={this.handleChange}
+            />
+
+            <Button variant="contained" type="submit" color="primary">
+              Hello World
         </Button>
 
-        </form>
+          </form>
+        </Container>
       </div>
     )
   }
