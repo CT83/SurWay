@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -23,11 +22,14 @@ class App extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+
         <input
           type="text"
           defaultvalue={this.state.username}
           onChange={this.handleChange}
         />
+
+
         <input type="submit" value="Submit" />
       </form>
     )
