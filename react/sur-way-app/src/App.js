@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/layout/Header';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 class App extends Component {
@@ -27,11 +25,17 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.working_hours + this.state.company+this.state.work_days_in_week)
+    alert(this.state.working_hours + this.state.company + this.state.work_days_in_week)
     event.preventDefault()
   }
 
   render() {
+
+    const padding = {
+      margin: "10px",
+    };
+
+
     return (
       <div className='App'>
         <Header />
@@ -46,6 +50,7 @@ class App extends Component {
                 defaultValue={this.state.working_hours}
                 onChange={this.handleInputChange}
                 name="working_hours"
+                style={padding}
               />
             </label>
 
@@ -58,13 +63,15 @@ class App extends Component {
                 defaultValue={this.state.work_days_in_week}
                 onChange={this.handleInputChange}
                 name="work_days_in_week"
+                style={padding}
               />
             </label>
             <br></br>
 
             <label>
               Company that I work for?
-          <select value={this.state.value} defaultValue={this.state.company} onChange={this.handleInputChange} name='company'>
+          <select value={this.state.value} defaultValue={this.state.company} onChange={this.handleInputChange} name='company'
+                style={padding}>
                 <option value="other">Other</option>
                 <option value="uber">Uber</option>
                 <option value="ola">Ola</option>
