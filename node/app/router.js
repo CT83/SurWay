@@ -18,7 +18,6 @@ router.get('/cabbie-surveys', function (req, res) {
                 message: err.message || "Some error occurred while retrieving surveys."
             });
         });
-
 })
 
 router.post('/cabbie-surveys', function (req, res) {

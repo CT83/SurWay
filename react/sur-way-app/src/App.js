@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/layout/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SurveyForm from './components/SurveyForm';
-
+import ThanksComponent from './components/ThanksComponent';
 
 class App extends Component {
 
@@ -27,7 +27,7 @@ class App extends Component {
               </React.Fragment>
             )}
           />
-          {/* <Route path='/thanks' component={About} /> */}
+          <Route path='/thanks' component={ThanksComponent} />
 
         </div >
       </Router>

@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Axios from 'axios'
-
+import { Redirect } from 'react-router-dom';
 
 class SurveyForm extends Component {
 
-    state = { working_hours: 10, work_days_in_week: 5, company: 'uber' }
+    state = {
+        working_hours: 10, work_days_in_week: 5, company: 'uber', redirect: false
+    }
 
     constructor(props) {
         super(props)
-
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
 
@@ -38,6 +39,8 @@ class SurveyForm extends Component {
 
         Axios.post(url, data).then((res) => {
             console.log(data);
+            this.setState({ redirect: true });
+
         }).catch((e) => {
             alert("Failed to Submit the form! - " + e)
         });
@@ -49,6 +52,11 @@ class SurveyForm extends Component {
             margin: "10px",
         };
 
+        const { redirect } = this.state;
+
+        if (redirect) {
+            return <Redirect to='/thanks' />;
+        }
 
         return (
             <Container fixed>
