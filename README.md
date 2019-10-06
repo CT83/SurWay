@@ -26,3 +26,5 @@ I was initially struggling to wrap my head around how Mongoose's DB-thingy worke
 2. Create a routes files to hand all of the get/update/list and other rest operations and link it with operations from the controller
 3. Create a controller file do the actual grunt work of CRUD-ing.
 4. 
+
+If you don't have CORS configured properly on your server, when you try to make an API request from a React component which is not the main component you might recieve a error where you won't see your POST being passed.

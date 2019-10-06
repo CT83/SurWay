@@ -20,9 +20,10 @@ router.get('/cabbie-surveys', function (req, res) {
         });
 
 })
-// define the about route
+
 router.post('/cabbie-surveys', function (req, res) {
     // Validate request
+    console.log(req.body)
     if (!req.body.working_hours || !req.body.work_days_in_week || !req.body.company) {
         return res.status(400).send({
             message: "Survey content can not be empty"
@@ -45,6 +46,7 @@ router.post('/cabbie-surveys', function (req, res) {
                 message: err.message || "Some error occurred while creating the Survey."
             });
         });
+    console.log("Created new survey!");
 })
 
 module.exports = router
