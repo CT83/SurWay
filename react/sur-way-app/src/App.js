@@ -26,10 +26,7 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.working_hours + this.state.company + this.state.work_days_in_week)
-
     event.preventDefault()
-
     const url = "http://localhost:3000/cabbie-surveys";
 
     const data = {
@@ -39,12 +36,9 @@ class App extends Component {
     }
 
     Axios.post(url, data).then((res) => {
-
-      //handle your login 
-
+      console.log(res);
     }).catch((e) => {
-
-      //handle your errors
+      alert("Umm, something went wrong!");
     });
   }
 
