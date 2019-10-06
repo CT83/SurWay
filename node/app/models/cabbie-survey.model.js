@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const CabbieSurveySchema = mongoose.Schema({
-    working_hours: Integer,
-    work_days_in_week: Integer,
+    working_hours: Number,
+    work_days_in_week: Number,
     company: String,
 }, {
     timestamps: true
