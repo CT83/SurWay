@@ -11,3 +11,5 @@ Now let's fix up the header.
 Now, that is done 
 
 Decided to revert from Material UI to plain React till I figure it out completely
+
+Then moved on to creating the node js backend 
