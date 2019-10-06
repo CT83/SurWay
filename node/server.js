@@ -31,7 +31,8 @@ app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Sur-Way keep, a simple survey application." });
 });
 
-require('./app/routes/cabbie-survey.routes.js').default(app);
+var api_router = require('./app/router');
+app.use(api_router)
 
 // listen for requests
 app.listen(3000, () => {

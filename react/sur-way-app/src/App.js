@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/layout/Header';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import Axios from 'axios'
 
 class App extends Component {
 
@@ -26,7 +27,25 @@ class App extends Component {
 
   handleSubmit(event) {
     alert(this.state.working_hours + this.state.company + this.state.work_days_in_week)
+
     event.preventDefault()
+
+    const url = "http://localhost:3000/cabbie-surveys";
+
+    const data = {
+      working_hours: this.state.working_hours,
+      work_days_in_week: this.state.work_days_in_week,
+      company: this.state.company,
+    }
+
+    Axios.post(url, data).then((res) => {
+
+      //handle your login 
+
+    }).catch((e) => {
+
+      //handle your errors
+    });
   }
 
   render() {
