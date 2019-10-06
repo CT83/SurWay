@@ -5,7 +5,7 @@ module.exports = (app) => {
     app.post('/cabbie-surveys', cabbieSurveys.create);
 
     // Retrieve all Notes
-    app.get('/cabbie-surveys', cabbieSurveyss.findAll);
+    app.get('/cabbie-surveys', cabbieSurveys.findAll);
 
     // Retrieve a single Survey with id
     app.get('/cabbie-surveys/:id', cabbieSurveys.findOne);
