@@ -4,6 +4,11 @@ import Header from './components/layout/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SurveyForm from './components/SurveyForm';
 import ThanksComponent from './components/ThanksComponent';
+import * as CanvasJSReact from './assets/canvasjs.react';
+// var CanvasJSReact = require('./canvasjs.react');
+// var CanvasJS = CanvasJSReact.CanvasJS;
+// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 
 class App extends Component {
 
