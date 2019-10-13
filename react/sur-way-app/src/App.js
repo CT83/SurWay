@@ -8,6 +8,7 @@ import * as CanvasJSReact from './assets/canvasjs.react';
 // var CanvasJSReact = require('./canvasjs.react');
 // var CanvasJS = CanvasJSReact.CanvasJS;
 // var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import Box from '@material-ui/core/Box';
 
 
 class App extends Component {
@@ -22,7 +23,13 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Header />
+          <Box color="text.primary" style={{ backgroundColor: '#cfe8fc', paddingBottom:'30px', paddingTop:'20px'}}>
 
+            <h1>Welcome to SurWay!</h1>
+            <p>SurWay is a polling website dedicated to Cab Drivers.</p>
+            <p>Drivers can use the form below to report their earnings, all of the data is stored anonymously and then can be later used to generate useful insights.</p>
+
+          </Box>
           <Route
             exact
             path='/'
