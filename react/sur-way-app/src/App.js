@@ -27,7 +27,7 @@ class App extends Component {
 
             <h1>Welcome to SurWay!</h1>
             <p>SurWay is a polling website dedicated to Cab Drivers.</p>
-            <p>Drivers can use the form below to report their earnings, all of the data is stored anonymously and then can be later used to generate useful insights.</p>
+            <p>Drivers can report their earnings, all of the data is stored anonymously and then can be later used to generate useful insights.</p>
 
           </Box>
           <Route

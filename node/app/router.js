@@ -7,11 +7,28 @@ router.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now())
     next()
 })
-// define the home page route
+
+router.get('/cabbie-surveys-summary', function (req, res) {
+    CabbieSurvey.aggregate()
+        .group({ "_id": null, 
+        "avg_working_hours": { "$avg": "$working_hours" },
+        "avg_work_days_in_week": { "$avg": "$work_days_in_week" },
+    })
+        .exec(function (err, result) {
+            if (err) {
+                return done(err);
+            }
+            console.log(result);
+            res.send(result);
+        });
+})
+
+
 router.get('/cabbie-surveys', function (req, res) {
 
     CabbieSurvey.find()
         .then(surveys => {
+            console.log("Fetched Surveys:" + surveys);
             res.send(surveys);
         }).catch(err => {
             res.status(500).send({
