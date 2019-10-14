@@ -1,6 +1,21 @@
 # Sur-Way
 
-First I got the basic html form working
+SurWay is a polling website dedicated to Cab Drivers.
+
+Drivers can report their earnings, all of the data is stored anonymously and then can be later used to generate useful insights.
+
+> This is one of my first React Projects, and so this took way longer than expected to complete. The general idea was to add several features like browser finger printing and SSO to ensure that a single user could be allowed to cast a vote only once. But, I decided to postpone these features for a future release. 
+
+## How did I build it?
+
+
+## Trying to learn React and Express on the road
+Before building this I had never worked with React before, this meant I had to unlearn everything working with Python had taught me over the years and take a deep dive into Javascript, I was also travelling around a bit as I worked on this, which meant long hours leaching off my Phone's WiFi Hotspot.
+
+1. I started off by watching one of those _Learn React in one video_ vidoes on YouTube. 
+https://www.youtube.com/watch?v=sBws8MSXN7A
+
+
 
 Then I added Material UI
 
