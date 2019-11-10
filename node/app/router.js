@@ -31,13 +31,10 @@ router.get('/cabbie-surveys-summary', function (req, res) {
                             if (survey.company == company) {
                                 company_breakdown[company]++;
                             }
-                            console.log(company_breakdown)
                         }
                     }
                     result[0]['company_breakdown'] = company_breakdown;
                     res.send(result);
-                    console.log(typeof(result));
-
                 });
 
 
