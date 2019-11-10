@@ -10,16 +10,37 @@ router.use(function timeLog(req, res, next) {
 
 router.get('/cabbie-surveys-summary', function (req, res) {
     CabbieSurvey.aggregate()
-        .group({ "_id": null, 
-        "avg_working_hours": { "$avg": "$working_hours" },
-        "avg_work_days_in_week": { "$avg": "$work_days_in_week" },
-    })
-        .exec(function (err, result) {
+        .group({
+            "_id": null,
+            "avg_working_hours": { "$avg": "$working_hours" },
+            "avg_work_days_in_week": { "$avg": "$work_days_in_week" },
+        }).exec(function (err, result) {
             if (err) {
                 return done(err);
             }
-            console.log(result);
-            res.send(result);
+            companies = ['uber', 'ola', 'meru', 'carzonrent', 'savaaricarrentals', 'tabcab', 'megacabs', 'ntltaxi', 'mytaxiindia']
+            company_breakdown = {};
+
+            CabbieSurvey.find()
+                .then(surveys => {
+                    for (survey of surveys) {
+                        for (company of companies) {
+                            if (company_breakdown[company] == null) {
+                                company_breakdown[company] = 0;
+                            }
+                            if (survey.company == company) {
+                                company_breakdown[company]++;
+                            }
+                            console.log(company_breakdown)
+                        }
+                    }
+                    result[0]['company_breakdown'] = company_breakdown;
+                    res.send(result);
+                    console.log(typeof(result));
+
+                });
+
+
         });
 })
 

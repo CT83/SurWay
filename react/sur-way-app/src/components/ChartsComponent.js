@@ -19,6 +19,7 @@ export default class ChartsComponent extends PureComponent {
                 console.log(response.data[0].avg_work_days_in_week);
                 this.state.data[0].avg_work_days_in_week = response.data[0].avg_work_days_in_week
                 this.state.data[0].avg_working_hours = response.data[0].avg_working_hours
+                this.state.data[0].company_breakdown = response.data[0].company_breakdown
             })
             .catch(error => {
                 console.log(error);
