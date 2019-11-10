@@ -1,15 +1,40 @@
 import React, { PureComponent } from 'react';
-import {
-    BarChart, Bar, ResponsiveContainer, AreaChart, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
+import { Bar, Line, Pie } from 'react-chartjs-2';
+import Box from '@material-ui/core/Box';
 import Axios from 'axios'
 
 export default class ChartsComponent extends PureComponent {
 
+
     state = {
         data: [
             { avg_work_days_in_week: 99, avg_working_hours: 20, name: 'Others' }
-        ]
+        ],
+        displayTitle: "Test Title",
+        chartData: {
+            labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+            datasets: [
+                {
+                    label: 'Population',
+                    data: [
+                        617594,
+                        181045,
+                        153060,
+                        106519,
+                        105162,
+                        95072
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
+                    ]
+                }]
+        }
     }
 
     componentDidMount() {
@@ -28,21 +53,28 @@ export default class ChartsComponent extends PureComponent {
     }
 
     render() {
-        console.log(this.state.avg_work_days_in_week);
-        // const data = this.state.data;
-
-        const data = this.state.data;
-
         return (
-            <BarChart data={data} width={700} height={400}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="avg_work_days_in_week" fill="#8884d8" />
-                <Bar dataKey="avg_working_hours" fill="#82ca9d" />
-            </BarChart>
+
+            <div>
+                <Bar
+                    data={this.state.chartData}
+                    options={{
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        aspectRatio: 1,
+                        title: {
+                            display: true,
+                            text: "Results",
+                            fontSize: 25
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right'
+                        }
+                    }}
+                />
+            </div>
+
         );
     }
 }
