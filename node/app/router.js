@@ -36,8 +36,6 @@ router.get('/cabbie-surveys-summary', function (req, res) {
                     result[0]['company_breakdown'] = company_breakdown;
                     res.send(result);
                 });
-
-
         });
 })
 
