@@ -20,6 +20,7 @@ router.get('/cabbie-surveys-summary', function (req, res) {
             }
             companies = ['uber', 'ola', 'meru', 'carzonrent', 'savaaricarrentals', 'tabcab', 'megacabs', 'ntltaxi', 'mytaxiindia']
             company_breakdown = {};
+            company_data = [];
 
             CabbieSurvey.find()
                 .then(surveys => {
@@ -34,6 +35,13 @@ router.get('/cabbie-surveys-summary', function (req, res) {
                         }
                     }
                     result[0]['company_breakdown'] = company_breakdown;
+
+                    for (var name in company_breakdown) {
+                        company_data.push(company_breakdown[name]);
+                    }
+
+                    result[0]['company_data'] = company_data;
+                    result[0]['company_names'] = companies;
                     res.send(result);
                 });
         });

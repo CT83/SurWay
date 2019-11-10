@@ -12,18 +12,11 @@ export default class ChartsComponent extends PureComponent {
         ],
         displayTitle: "Test Title",
         chartData: {
-            labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+            labels: [],
             datasets: [
                 {
                     label: 'Population',
-                    data: [
-                        617594,
-                        181045,
-                        153060,
-                        106519,
-                        105162,
-                        95072
-                    ],
+                    data: [],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)',
                         'rgba(54, 162, 235, 0.6)',
@@ -45,6 +38,8 @@ export default class ChartsComponent extends PureComponent {
                 this.state.data[0].avg_work_days_in_week = response.data[0].avg_work_days_in_week
                 this.state.data[0].avg_working_hours = response.data[0].avg_working_hours
                 this.state.data[0].company_breakdown = response.data[0].company_breakdown
+                this.state.chartData.labels = response.data[0].company_names;
+                this.state.chartData.datasets[0].data = response.data[0].company_data;
             })
             .catch(error => {
                 console.log(error);
