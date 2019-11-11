@@ -6,6 +6,7 @@ import SurveyForm from './components/SurveyForm';
 import ThanksComponent from './components/ThanksComponent';
 import Box from '@material-ui/core/Box';
 
+import BackGroundImage from '../src/assets/images/bg-2.jpg';
 
 class App extends Component {
 
@@ -19,11 +20,19 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Header />
-          <Box color="text.primary" style={{ backgroundColor: '#cfe8fc', paddingBottom:'30px', paddingTop:'20px'}}>
+          <Box color="white"
+            style={{
+              backgroundImage: `url(${BackGroundImage})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center center",
+              backgroundSize: "cover",
+              backgroundAttachment: "fixed",
+              paddingBottom: '30px', paddingTop: '20px'
+            }}>
 
             <h1>Welcome to SurWay!</h1>
-            <p>SurWay is a polling website dedicated to Cab Drivers.</p>
-            <p>Drivers can report their earnings, all of the data is stored anonymously and then can be later used to generate useful insights.</p>
+            <h3>SurWay is a polling website dedicated to Cab Drivers.</h3>
+            <h3>Drivers can report their earnings, all of the data is stored anonymously and then can be later used to generate useful insights.</h3>
 
           </Box>
           <Route
