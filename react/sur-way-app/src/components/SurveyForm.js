@@ -3,6 +3,10 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Axios from 'axios'
 import { Redirect } from 'react-router-dom';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+
 
 class SurveyForm extends Component {
 
@@ -14,7 +18,6 @@ class SurveyForm extends Component {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
-
     }
 
     handleInputChange(event) {
@@ -47,7 +50,7 @@ class SurveyForm extends Component {
     }
 
     render() {
-
+        const { classes } = this.props;
         const padding = {
             margin: "10px",
         };
@@ -67,6 +70,15 @@ class SurveyForm extends Component {
             <Container fixed>
 
                 <form onSubmit={this.handleSubmit}>
+
+                    <div>
+                        <TextField
+                            id="standard-basic"
+                            className={classes.textField}
+                            label="Your Name?"
+                            margin="normal"
+                        />
+                    </div>
 
                     <label>
                         How many hours a day do I work?
@@ -120,4 +132,17 @@ class SurveyForm extends Component {
 
 }
 
-export default SurveyForm;
+const useStyles = makeStyles(theme => ({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+    },
+  }));
+  
+// This injects, with styles into survey form, ig?
+export default withStyles(useStyles)(SurveyForm)
