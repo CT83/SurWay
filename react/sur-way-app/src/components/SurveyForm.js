@@ -75,23 +75,14 @@ class SurveyForm extends Component {
                         <TextField
                             id="standard-basic"
                             className={classes.textField}
-                            label="Your Name?"
+                            label="How many hours a day do you work?"
                             margin="normal"
-                        />
-                    </div>
-
-                    <label>
-                        How many hours a day do I work?
-              <input
-                            type="number"
                             defaultValue={this.state.working_hours}
                             onChange={this.handleInputChange}
                             name="working_hours"
-                            style={padding}
+                            type="number"
                         />
-                    </label>
-
-                    <br></br>
+                    </div>
 
                     <label>
                         How many days a week do I work?
@@ -134,15 +125,15 @@ class SurveyForm extends Component {
 
 const useStyles = makeStyles(theme => ({
     container: {
-      display: 'flex',
-      flexWrap: 'wrap',
+        display: 'flex',
+        flexWrap: 'wrap',
     },
     textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: 200,
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 200,
     },
-  }));
-  
+}));
+
 // This injects, with styles into survey form, ig?
 export default withStyles(useStyles)(SurveyForm)
