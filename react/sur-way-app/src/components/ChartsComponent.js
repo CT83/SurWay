@@ -41,6 +41,17 @@ export default class ChartsComponent extends PureComponent {
                 this.state.data[0].avg_work_days_in_week = response.data[0].avg_work_days_in_week
                 this.state.data[0].avg_working_hours = response.data[0].avg_working_hours
                 this.state.data[0].company_breakdown = response.data[0].company_breakdown
+
+                this.setState({
+                    chartData: {
+                        labels: response.data[0].company_names,
+                        datasets: [
+                            {
+                                label: 'Drivers',
+                                data: response.data[0].company_data,
+                            }]
+                    }
+                })
                 this.state.chartData.labels = response.data[0].company_names;
                 this.state.chartData.datasets[0].data = response.data[0].company_data;
             })
@@ -53,7 +64,7 @@ export default class ChartsComponent extends PureComponent {
     render() {
         return (
 
-            <div>
+            <Box>
                 <Bar
                     data={this.state.chartData}
                     options={{
@@ -71,7 +82,7 @@ export default class ChartsComponent extends PureComponent {
                         }
                     }}
                 />
-            </div>
+            </Box>
 
         );
     }

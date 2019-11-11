@@ -9,7 +9,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+
 import BackGroundImage from '../src/assets/images/bg-2.jpg';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -67,17 +67,7 @@ class App extends Component {
               height:"75vh",
               background:'#F5F5F5',
           }}>
-
-            <Box width={1 / 4}>
-            <Paper >
-              <Card className={classes.card} >
-                <CardContent>
-                  <Typography variant="h5" component="h2">
-                    Complete the Survey!
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    What does your day as a cab driver look like?
-                  </Typography>
+                  
                   <Route
                     exact
                     path='/'
@@ -88,14 +78,7 @@ class App extends Component {
                     )}
                   />
                   <Route path='/thanks' component={ThanksComponent} />
-
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Learn More</Button>
-                </CardActions>
-              </Card>
-              </Paper>
-            </Box>
+                 
           </Grid>
 
 
