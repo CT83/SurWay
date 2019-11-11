@@ -58,6 +58,11 @@ class SurveyForm extends Component {
             return <Redirect to='/thanks' />;
         }
 
+        this.state.companies = {
+            'uber': 'Uber', 'ola': "Ola", 'meru': "Meru", 'carzonrent': "Carz On Rent", 'savaaricarrentals': "Savaari Car Rentals",
+            'tabcab': "Tab Cab", 'megacabs': "Mega Cabs", 'ntltaxi': "Ntl Taxi", 'mytaxiindia': "My Taxi India"
+        }
+
         return (
             <Container fixed>
 
@@ -92,9 +97,13 @@ class SurveyForm extends Component {
                         Company that I work for?
           <select value={this.state.value} defaultValue={this.state.company} onChange={this.handleInputChange} name='company'
                             style={padding}>
-                            <option value="other">Other</option>
-                            <option value="uber">Uber</option>
-                            <option value="ola">Ola</option>
+                            {/* <option value="other">Other</option> */}
+                            {/* <option value="uber">Uber</option> */}
+                            {/* <option value="ola">Ola</option> */}
+                            {Object.keys(this.state.companies).map((key, index) => (
+                                <option value={key}>{this.state.companies[key]} </option>
+                            ))}
+
                         </select>
                     </label>
 
