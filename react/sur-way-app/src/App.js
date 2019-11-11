@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import BackGroundImage from '../src/assets/images/bg-2.jpg';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 
 
@@ -53,7 +54,7 @@ class App extends Component {
               backgroundPosition: "center center",
               backgroundSize: "cover",
               backgroundAttachment: "fixed",
-              paddingBottom: '30px', paddingTop: '20px'
+              paddingBottom: '30px', paddingTop: '20px',height:"35vh",
             }}>
 
             <h1>Welcome to SurWay!</h1>
@@ -62,10 +63,13 @@ class App extends Component {
 
           </Box>
           <Grid container justify="center" style={{
-            paddingBottom: '30px', paddingTop: '20px'
+            paddingBottom: '30px', paddingTop: '20px',
+              height:"75vh",
+              background:'#F5F5F5',
           }}>
 
             <Box width={1 / 4}>
+            <Paper >
               <Card className={classes.card} >
                 <CardContent>
                   <Typography variant="h5" component="h2">
@@ -90,6 +94,7 @@ class App extends Component {
                   <Button size="small">Learn More</Button>
                 </CardActions>
               </Card>
+              </Paper>
             </Box>
           </Grid>
 
