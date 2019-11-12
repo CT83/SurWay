@@ -12,6 +12,11 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 class SurveyForm extends Component {
 
@@ -55,6 +60,7 @@ class SurveyForm extends Component {
     }
 
     render() {
+
         const { classes } = this.props;
         const padding = {
             margin: "10px",
@@ -73,7 +79,7 @@ class SurveyForm extends Component {
 
         return (
 
-            <Box width={1 / 4}>
+            <Box width={1 / 3}>
                 <Paper >
                     <Card className={classes.card} >
                         <CardContent>
@@ -90,7 +96,7 @@ class SurveyForm extends Component {
 
                                     <div>
                                         <TextField
-                                            id="standard-basic"
+                                            id="working_hours_txt"
                                             className={classes.textField}
                                             label="How many hours a day do you work?"
                                             margin="normal"
@@ -98,20 +104,41 @@ class SurveyForm extends Component {
                                             onChange={this.handleInputChange}
                                             name="working_hours"
                                             type="number"
+                                            style={{ padding: '20px' }}
                                         />
                                     </div>
 
-                                    <label>
-                                        How many days a week do I work?
-              <input
-                                            type="number"
+                                    <div>
+                                        <TextField
+                                            id="working_days_txt"
+                                            className={classes.textField}
+                                            label="How many days a week do you work?"
+                                            margin="normal"
                                             defaultValue={this.state.work_days_in_week}
                                             onChange={this.handleInputChange}
-                                            name="work_days_in_week"
-                                            style={padding}
+                                            name="working_days"
+                                            type="number"
+                                            style={{ padding: '20px' }}
                                         />
-                                    </label>
-                                    <br></br>
+                                    </div>
+                                    <div>
+                                        <FormControl className={classes.formControl}>
+                                            <InputLabel id="company-drop-down-lab">What company do you work with?</InputLabel>
+                                            <Select
+                                                labelId="company-drop-down-lab"
+                                                id="demo-simple-select"
+                                                value={"Ubser"}
+                                                onChange={this.handleInputChange}
+                                                autoWidth={true}
+                                                style={{minWidth: '150px'}}
+                                            >
+                                                {Object.keys(this.state.companies).map((key, index) => (
+                                                    <MenuItem value={key}>{this.state.companies[key]} </MenuItem>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
+
+                                    </div>
 
                                     <label>
                                         Company that I work for?
@@ -155,6 +182,13 @@ const useStyles = makeStyles(theme => ({
         marginLeft: theme.spacing(1),
         marginRight: theme.spacing(1),
         width: 200,
+    },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
     },
 }));
 

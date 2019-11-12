@@ -5,14 +5,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SurveyForm from './components/SurveyForm';
 import ThanksComponent from './components/ThanksComponent';
 import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-
 import BackGroundImage from '../src/assets/images/bg-2.jpg';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 
 
 
@@ -54,7 +48,7 @@ class App extends Component {
               backgroundPosition: "center center",
               backgroundSize: "cover",
               backgroundAttachment: "fixed",
-              paddingBottom: '30px', paddingTop: '20px',height:"35vh",
+              paddingBottom: '30px', paddingTop: '20px', height: "35vh",
             }}>
 
             <h1>Welcome to SurWay!</h1>
@@ -64,21 +58,21 @@ class App extends Component {
           </Box>
           <Grid container justify="center" style={{
             paddingBottom: '30px', paddingTop: '20px',
-              height:"75vh",
-              background:'#F5F5F5',
+            height: "75vh",
+            background: '#F5F5F5',
           }}>
-                  
-                  <Route
-                    exact
-                    path='/'
-                    render={(props) => (
-                      <React.Fragment>
-                        <SurveyForm />
-                      </React.Fragment>
-                    )}
-                  />
-                  <Route path='/thanks' component={ThanksComponent} />
-                 
+
+            <Route
+              exact
+              path='/'
+              render={(props) => (
+                <React.Fragment>
+                  <SurveyForm />
+                </React.Fragment>
+              )}
+            />
+            <Route path='/thanks' component={ThanksComponent} />
+
           </Grid>
 
 
