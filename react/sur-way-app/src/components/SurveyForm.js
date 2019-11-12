@@ -122,7 +122,7 @@ class SurveyForm extends Component {
                                         />
                                     </div>
                                     <div>
-                                        <FormControl className={classes.formControl}>
+                                        <FormControl className={classes.formControl} style={{padding:'20px'}}>
                                             <InputLabel id="company-drop-down-lab">What company do you work with?</InputLabel>
                                             <Select
                                                 name='company'
@@ -138,21 +138,6 @@ class SurveyForm extends Component {
                                         </FormControl>
 
                                     </div>
-
-                                    <label>
-                                        Company that I work for?
-          <select value={this.state.value} defaultValue={this.state.company} onChange={this.handleInputChange} name='company'
-                                            style={padding}>
-                                            <option value="other">Other</option>
-                                            {Object.keys(this.state.companies).map((key, index) => (
-                                                <option value={key}>{this.state.companies[key]} </option>
-                                            ))}
-
-                                        </select>
-                                    </label>
-
-                                    <br></br>
-
                                     <Button variant="contained" type="submit" color="primary">
                                         Submit
         </Button>
