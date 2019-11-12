@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import * as serviceWorker from './serviceWorker';
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const theme = createMuiTheme({
     palette: {
@@ -11,6 +12,9 @@ const theme = createMuiTheme({
         secondary: {
             main: '#651fff',
         },
+        background: {
+            default: '#F5F5F5'
+        }
     },
     typography: {
         useNextVariants: true
@@ -19,6 +23,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <App />
     </MuiThemeProvider>,
     document.getElementById('root'));

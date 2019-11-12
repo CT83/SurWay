@@ -76,7 +76,7 @@ class App extends Component {
           </Grid>
 
 
-        </div >
+        </div>
       </Router>
     )
   }
