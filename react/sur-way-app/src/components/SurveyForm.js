@@ -125,13 +125,12 @@ class SurveyForm extends Component {
                                         <FormControl className={classes.formControl}>
                                             <InputLabel id="company-drop-down-lab">What company do you work with?</InputLabel>
                                             <Select
-                                                labelId="company-drop-down-lab"
+                                                name='company'
                                                 id="demo-simple-select"
-                                                value={"Ubser"}
+                                                value={this.state.company}
                                                 onChange={this.handleInputChange}
                                                 autoWidth={true}
-                                                style={{minWidth: '150px'}}
-                                            >
+                                                style={{ minWidth: '150px' }}>
                                                 {Object.keys(this.state.companies).map((key, index) => (
                                                     <MenuItem value={key}>{this.state.companies[key]} </MenuItem>
                                                 ))}
