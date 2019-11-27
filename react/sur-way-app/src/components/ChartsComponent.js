@@ -3,12 +3,17 @@ import { Bar, Line, Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
 import Axios from 'axios'
 
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 export default class ChartsComponent extends PureComponent {
 
 
     state = {
         data: [
-            { avg_work_days_in_week: 99, avg_working_hours: 20, name: 'Others' }
+            { avg_work_days_in_week: 99, avg_working_hours: 20 }
         ],
         displayTitle: "Test Title",
         chartData: {
@@ -32,28 +37,22 @@ export default class ChartsComponent extends PureComponent {
                 }]
         },
         working_hours_data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ["Chocolate", "Vanilla", "Strawberry"],
             datasets: [
                 {
-                    label: 'My First dataset',
-                    fill: false,
-                    lineTension: 0.1,
-                    backgroundColor: 'rgba(75,192,192,0.4)',
-                    borderColor: 'rgba(75,192,192,1)',
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: 'rgba(75,192,192,1)',
-                    pointBackgroundColor: '#fff',
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-                    pointHoverBorderColor: 'rgba(220,220,220,1)',
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                    data: [65, 59, 80, 81, 56, 55, 40]
+                    label: "Blue",
+                    backgroundColor: "blue",
+                    data: [3, 7, 4]
+                },
+                {
+                    label: "Red",
+                    backgroundColor: "red",
+                    data: [4, 3, 5]
+                },
+                {
+                    label: "Green",
+                    backgroundColor: "green",
+                    data: [7, 2, 6]
                 }
             ]
         }
@@ -76,10 +75,17 @@ export default class ChartsComponent extends PureComponent {
                                 label: 'Drivers',
                                 data: response.data[0].company_data,
                             }]
-                    }
+                    },
+
+                    // working_hours_data: {
+                    //     labels: response.data[0].company_names,
+                    //     datasets: [
+                    //         {
+                    //             label: 'Average - Working Hours',
+                    //             data: response.data[0].company_data,
+                    //         }]
+                    // }
                 })
-                this.state.chartData.labels = response.data[0].company_names;
-                this.state.chartData.datasets[0].data = response.data[0].company_data;
             })
             .catch(error => {
                 console.log(error);
@@ -90,28 +96,76 @@ export default class ChartsComponent extends PureComponent {
     render() {
         return (
             <div>
-                <Box >
-                    <Bar
-                        data={this.state.chartData}
+                <Box>
+
+                    <Card style={{ margin: 20 }}>
+                        <CardContent>
+                            <Typography color="textSecondary" gutterBottom>
+                                How many hours a day do you work?
+                            </Typography>
+                            <Typography variant="h5" component="h2">
+                            </Typography>
+                            <Typography color="textSecondary">
+                                I genereally work <strong>{this.state.data[0].avg_working_hours}</strong> hours a day.
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card style={{ margin: 20 }}>
+                        <CardContent>
+                            <Typography color="textSecondary" gutterBottom>
+                                How many days a week do you work?
+                            </Typography>
+                            <Typography variant="h5" component="h2">
+                            </Typography>
+                            <Typography color="textSecondary">
+                                I genereally work <strong>{this.state.data[0].avg_work_days_in_week}</strong> days a week.
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card style={{ margin: 20 }}>
+                        <CardContent>
+                            <Bar
+                                data={this.state.chartData}
+                                options={{
+                                    responsive: true,
+                                    maintainAspectRatio: true,
+                                    aspectRatio: 1,
+                                    title: {
+                                        display: true,
+                                        text: "Number of Drivers",
+                                        fontSize: 25
+                                    },
+                                    legend: {
+                                        display: true,
+                                        position: 'right'
+                                    }
+                                }}
+                            />
+                        </CardContent>
+                    </Card>
+
+
+
+                </Box>
+
+                <Box>
+                    <Bar ref="chart" data={this.state.working_hours_data}
                         options={{
                             responsive: true,
                             maintainAspectRatio: true,
                             aspectRatio: 1,
                             title: {
                                 display: true,
-                                text: "Results",
+                                text: "Average Working Hours",
                                 fontSize: 25
                             },
                             legend: {
                                 display: true,
                                 position: 'right'
                             }
-                        }}
-                    />
-                </Box>
-
-                <Box>
-                    <Line ref="chart" data={this.state.working_hours_data} />
+                        }} />
                 </Box>
             </div>
         );

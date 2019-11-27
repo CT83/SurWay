@@ -122,7 +122,7 @@ class SurveyForm extends Component {
                                         />
                                     </div>
                                     <div>
-                                        <FormControl className={classes.formControl} style={{padding:'20px'}}>
+                                        <FormControl className={classes.formControl} style={{ padding: '20px' }}>
                                             <InputLabel id="company-drop-down-lab">What company do you work with?</InputLabel>
                                             <Select
                                                 name='company'
@@ -145,9 +145,6 @@ class SurveyForm extends Component {
                                 </form>
                             </Container>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Learn More</Button>
-                        </CardActions>
                     </Card>
                 </Paper>
             </Box>
