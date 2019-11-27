@@ -106,7 +106,7 @@ export default class ChartsComponent extends PureComponent {
                             <Typography variant="h5" component="h2">
                             </Typography>
                             <Typography color="textSecondary">
-                                I genereally work <strong>{this.state.data[0].avg_working_hours}</strong> hours a day.
+                                I genereally work <strong>{this.state.data[0].avg_working_hours.toFixed(2)}</strong> hours a day.
                             </Typography>
                         </CardContent>
                     </Card>
@@ -119,7 +119,7 @@ export default class ChartsComponent extends PureComponent {
                             <Typography variant="h5" component="h2">
                             </Typography>
                             <Typography color="textSecondary">
-                                I genereally work <strong>{this.state.data[0].avg_work_days_in_week}</strong> days a week.
+                                I genereally work <strong>{this.state.data[0].avg_work_days_in_week.toFixed(2)}</strong> days a week.
                             </Typography>
                         </CardContent>
                     </Card>
@@ -148,24 +148,6 @@ export default class ChartsComponent extends PureComponent {
 
 
 
-                </Box>
-
-                <Box>
-                    <Bar ref="chart" data={this.state.working_hours_data}
-                        options={{
-                            responsive: true,
-                            maintainAspectRatio: true,
-                            aspectRatio: 1,
-                            title: {
-                                display: true,
-                                text: "Average Working Hours",
-                                fontSize: 25
-                            },
-                            legend: {
-                                display: true,
-                                position: 'right'
-                            }
-                        }} />
                 </Box>
             </div>
         );

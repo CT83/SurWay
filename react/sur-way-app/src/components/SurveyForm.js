@@ -118,7 +118,7 @@ class SurveyForm extends Component {
                                             onChange={this.handleInputChange}
                                             name="working_days"
                                             type="number"
-                                            style={{ padding: '20px' }}
+                                            style={{ padding: '20px' }}                                            
                                         />
                                     </div>
                                     <div>
