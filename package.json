@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild": "cd react/sur-way-app && npm install --only=dev && npm install && npm run-script build"
+    "heroku-postbuild": "cd react/sur-way-app && npm install && npm run-script build"
   },
   "author": "rohan",
   "license": "BSD-2-Clause",
@@ -19,7 +19,8 @@
     "concurrently": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.7.5"
+    "mongoose": "^5.7.5",
+    "dotenv": "^8.2.0",
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
