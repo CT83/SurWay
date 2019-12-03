@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild": "cd react && npm install --only=dev && npm install && npm run-script build"
+    "heroku-postbuild": "cd react/sur-way-app && npm install --only=dev && npm install && npm run-script build"
   },
   "author": "rohan",
   "license": "BSD-2-Clause",
