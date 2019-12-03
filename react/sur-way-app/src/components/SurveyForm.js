@@ -116,7 +116,7 @@ class SurveyForm extends Component {
                                             margin="normal"
                                             defaultValue={this.state.work_days_in_week}
                                             onChange={this.handleInputChange}
-                                            name="working_days"
+                                            name="work_days_in_week"
                                             type="number"
                                             style={{ padding: '20px' }}                                            
                                         />
