@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
+app.use(express.static(path.join(__dirname, "react", "sur-way-app", "build")))
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
@@ -29,15 +30,10 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-// define a simple route
-app.get('/', (req, res) => {
-    res.json({ "message": "Welcome to Sur-Way keep, a simple survey application." });
-});
-
 var api_router = require('./app/router');
 app.use(api_router)
 
-app.use(express.static(path.join(__dirname, "react", "sur-way-app", "build")))
+
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "react", "sur-way-app", "build", "index.html"));
 });
