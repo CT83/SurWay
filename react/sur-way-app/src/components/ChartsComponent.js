@@ -59,7 +59,7 @@ export default class ChartsComponent extends PureComponent {
     }
 
     componentDidMount() {
-        const url = "http://sur-way.herokuapp.com/cabbie-surveys-summary";
+        const url = "https://sur-way.herokuapp.com/cabbie-surveys-summary";
         Axios.get(url)
             .then(response => {
                 console.log(response.data[0].avg_work_days_in_week);

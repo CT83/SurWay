@@ -42,7 +42,7 @@ class SurveyForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        const url = "http://sur-way.herokuapp.com/cabbie-surveys";
+        const url = "https://sur-way.herokuapp.com/cabbie-surveys";
 
         const data = {
             working_hours: this.state.working_hours,
