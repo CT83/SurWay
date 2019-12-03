@@ -38,7 +38,10 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "react", "sur-way-app", "build", "index.html"));
 });
 
+require("dotenv").config()
+const port = process.env.PORT || 5000;
+
 // listen for requests
-app.listen(80,() => {
+app.listen(port, () => {
     console.log("Server is listening on port 3000");
 });
