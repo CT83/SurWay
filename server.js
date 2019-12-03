@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require("path")
 
 // create express app
 const app = express();
@@ -35,6 +36,11 @@ app.get('/', (req, res) => {
 
 var api_router = require('./app/router');
 app.use(api_router)
+
+app.use(express.static(path.join(__dirname, "react", "sur-way-app", "build")))
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "react", "sur-way-app", "build", "index.html"));
+});
 
 // listen for requests
 app.listen(3000, () => {
