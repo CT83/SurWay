@@ -12,6 +12,11 @@ import Grid from '@material-ui/core/Grid';
 
 class App extends Component {
 
+  componentDidMount() {
+    document.title = "Surway - A Polling Site for Drivers"
+  }
+
+
   constructor(props) {
     super(props)
   }
@@ -35,7 +40,6 @@ class App extends Component {
         marginBottom: 12,
       },
     }
-    const bull = <span className={classes.bullet}>•</span>;
 
     return (
       <Router>
@@ -48,7 +52,7 @@ class App extends Component {
               backgroundPosition: "center center",
               backgroundSize: "cover",
               backgroundAttachment: "fixed",
-              paddingBottom: '30px', paddingTop: '20px', height: "35vh",paddingLeft:"25px",paddingRight:"25px"
+              paddingBottom: '30px', paddingTop: '20px', height: "35vh", paddingLeft: "25px", paddingRight: "25px"
             }}>
 
             <h1>Welcome to SurWay!</h1>
