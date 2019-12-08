@@ -48,7 +48,7 @@ class App extends Component {
               backgroundPosition: "center center",
               backgroundSize: "cover",
               backgroundAttachment: "fixed",
-              paddingBottom: '30px', paddingTop: '20px', height: "35vh",
+              paddingBottom: '30px', paddingTop: '20px', height: "35vh",paddingLeft:"25px",paddingRight:"25px"
             }}>
 
             <h1>Welcome to SurWay!</h1>

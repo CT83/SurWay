@@ -79,7 +79,7 @@ class SurveyForm extends Component {
 
         return (
 
-            <Box width={1 / 3}>
+            <Box width="85%">
                 <Paper >
                     <Card className={classes.card} >
                         <CardContent>
