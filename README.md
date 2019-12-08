@@ -4,13 +4,13 @@
 
 SurWay is a survey/polling website for cab drivers where they can report their typical work hours and which company they work for, this data is then stored anonymously and used to generate charts and insights.
 
-Frontend - [React](https://reactjs.org/), [Material-UI](https://material-ui.com/), [React ChartsJS 2](https://www.npmjs.com/package/react-chartjs-2)
-Backend - [NodeJS Express](https://expressjs.com/)
-Database - [MongoDB](https://www.mongodb.com/)
-Hosting - [Heroku](https://www.heroku.com/) - Free Tier
-Local Development - [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
+* Frontend - [React](https://reactjs.org/), [Material-UI](https://material-ui.com/), [React ChartsJS 2](https://www.npmjs.com/package/react-chartjs-2)
+* Backend - [NodeJS Express](https://expressjs.com/)
+* Database - [MongoDB](https://www.mongodb.com/)
+* Hosting - [Heroku](https://www.heroku.com/) - Free Tier
+* Local Development - [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
 
-
+<hr>
 
 <hr>
 
@@ -36,19 +36,19 @@ I used create-react-app and some other starter templates to create a boilerplate
 
 I first got a basic submit form working 
 
-![screencapture-localhost-3000-2019-10-05-19_02_13](images\screencapture-localhost-3000-2019-10-05-19_02_13.png)
+![screencapture-localhost-3000-2019-10-05-19_02_13](images/screencapture-localhost-3000-2019-10-05-19_02_13.png)
 
 Then I created the DB Schema in Node, added the required routes in [Express](https://expressjs.com/), tested them with [PostMan](https://www.getpostman.com/), I configured the frontend with React to ensure forms were submitted successfully.
 
-![postman](images\postman.png)
+![postman](images/postman.png)
 
-![screencapture-localhost-3000-2019-10-06-10_26_48](images\screencapture-localhost-3000-2019-10-06-10_26_48.png)
+![screencapture-localhost-3000-2019-10-06-10_26_48](images/screencapture-localhost-3000-2019-10-06-10_26_48.png)
 
 If you want an in-depth tutorial about how I went about doing that follow this - [Let’s build a full stack MongoDB, React, Node and Express (MERN) app](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274)
 
 #### Step 3 - Displaying the into Charts.
 
-![screencapture-localhost-3001-thanks-2019-10-12-22_42_57](images\screencapture-localhost-3001-thanks-2019-10-12-22_42_57.png)
+![screencapture-localhost-3001-thanks-2019-10-12-22_42_57](images/screencapture-localhost-3001-thanks-2019-10-12-22_42_57.png)
 
 After digging around for a way to implement charts in React I stumbled across [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2). I retrieved the data from my MongoDB using Express and Node and displayed the charts in React.  
 
@@ -60,11 +60,11 @@ My App now started to look like this.
 
 _Form Page_
 
-![home](images\home.png)
+![home](images/home.png)
 
 _Results Page
 
-![report](images\report.png)
+![report](images/report.png)
 
 
 
@@ -78,4 +78,4 @@ I built this app on one of my trips out of the city.
 
 Here’s a special _learning-coding-in-car-gif_ for you!
 
-![car-code](images\car-code.gif)
+![car-code](images/car-code.gif)
