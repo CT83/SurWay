@@ -131,8 +131,8 @@ class SurveyForm extends Component {
                                                 onChange={this.handleInputChange}
                                                 autoWidth={true}
                                                 style={{ minWidth: '150px' }}>
-                                                {Object.keys(this.state.companies).map((key, index) => (
-                                                    <MenuItem value={key}>{this.state.companies[key]} </MenuItem>
+                                                {Object.keys(this.state.companies).map((iKey, index) => (
+                                                    <MenuItem value={iKey} key={index}>{this.state.companies[iKey]} </MenuItem>
                                                 ))}
                                             </Select>
                                         </FormControl>

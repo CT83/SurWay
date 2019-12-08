@@ -1,12 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
 import Axios from 'axios'
 
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 export default class ChartsComponent extends PureComponent {
 
@@ -36,33 +34,12 @@ export default class ChartsComponent extends PureComponent {
                     ]
                 }]
         },
-        working_hours_data: {
-            labels: ["Chocolate", "Vanilla", "Strawberry"],
-            datasets: [
-                {
-                    label: "Blue",
-                    backgroundColor: "blue",
-                    data: [3, 7, 4]
-                },
-                {
-                    label: "Red",
-                    backgroundColor: "red",
-                    data: [4, 3, 5]
-                },
-                {
-                    label: "Green",
-                    backgroundColor: "green",
-                    data: [7, 2, 6]
-                }
-            ]
-        }
     }
 
     componentDidMount() {
         const url = "https://sur-way.herokuapp.com/cabbie-surveys-summary";
         Axios.get(url)
             .then(response => {
-                console.log(response.data[0].avg_work_days_in_week);
                 this.state.data[0].avg_work_days_in_week = response.data[0].avg_work_days_in_week
                 this.state.data[0].avg_working_hours = response.data[0].avg_working_hours
                 this.state.data[0].company_breakdown = response.data[0].company_breakdown
@@ -76,15 +53,6 @@ export default class ChartsComponent extends PureComponent {
                                 data: response.data[0].company_data,
                             }]
                     },
-
-                    // working_hours_data: {
-                    //     labels: response.data[0].company_names,
-                    //     datasets: [
-                    //         {
-                    //             label: 'Average - Working Hours',
-                    //             data: response.data[0].company_data,
-                    //         }]
-                    // }
                 })
             })
             .catch(error => {
@@ -98,7 +66,7 @@ export default class ChartsComponent extends PureComponent {
             <div>
                 <Box>
 
-                    <Card style={{ margin: 20 }}>
+                    <Card style={{ margin: 10 }}>
                         <CardContent>
                             <Typography color="textSecondary" gutterBottom>
                                 How many hours a day do you work?
@@ -111,7 +79,7 @@ export default class ChartsComponent extends PureComponent {
                         </CardContent>
                     </Card>
 
-                    <Card style={{ margin: 20 }}>
+                    <Card style={{ margin: 10 }}>
                         <CardContent>
                             <Typography color="textSecondary" gutterBottom>
                                 How many days a week do you work?
@@ -119,35 +87,31 @@ export default class ChartsComponent extends PureComponent {
                             <Typography variant="h5" component="h2">
                             </Typography>
                             <Typography color="textSecondary">
-                            Others generally work  <strong>{this.state.data[0].avg_work_days_in_week.toFixed(2)}</strong> days a week.
+                                Others generally work  <strong>{this.state.data[0].avg_work_days_in_week.toFixed(2)}</strong> days a week.
                             </Typography>
                         </CardContent>
                     </Card>
 
-                    <Card style={{ margin: 20 }}>
+                    <Card style={{ margin: 10, }}>
                         <CardContent>
-                            <Bar
-                                data={this.state.chartData}
-                                options={{
-                                    responsive: true,
-                                    maintainAspectRatio: true,
-                                    aspectRatio: 1,
-                                    title: {
-                                        display: true,
-                                        text: "Number of Drivers",
-                                        fontSize: 25
-                                    },
-                                    legend: {
-                                        display: true,
-                                        position: 'right'
-                                    }
-                                }}
-                            />
+                            <Box height="50vh">
+                                <Bar data={this.state.chartData}
+                                    options={{
+                                        maintainAspectRatio: false,
+                                        title: {
+                                            display: true,
+                                            text: "Number of Drivers",
+                                            fontSize: 25
+                                        },
+                                        legend: {
+                                            display: false,
+                                            position: 'right'
+                                        }
+                                    }}
+                                />
+                            </Box>
                         </CardContent>
                     </Card>
-
-
-
                 </Box>
             </div>
         );
