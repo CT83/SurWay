@@ -102,7 +102,8 @@ class SurveyForm extends Component {
                                             onChange={this.handleInputChange}
                                             name="working_hours"
                                             type="number"
-                                            style={{ padding: '20px' }}
+                                            inputProps={{ min: "0", max: "24", step: "1", }}
+                                            style={{ padding: '20px', width: "25vh" }}
                                         />
                                     </div>
 
@@ -116,7 +117,8 @@ class SurveyForm extends Component {
                                             onChange={this.handleInputChange}
                                             name="work_days_in_week"
                                             type="number"
-                                            style={{ padding: '20px' }}                                            
+                                            inputProps={{ min: "0", max: "7", step: "1", }}
+                                            style={{ padding: '20px', width: "25vh" }}
                                         />
                                     </div>
                                     <div>
