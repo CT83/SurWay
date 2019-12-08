@@ -1,8 +1,6 @@
-# SurWay
+# [SurWay](sur-way.herokuapp.com)
 
-
-
-#### View Live Version!- [sur-way.herokuapp.com
+#### [View Live Version!](sur-way.herokuapp.com) - sur-way.herokuapp.com
 
 SurWay is a survey/polling website for cab drivers where they can report their typical work hours and which company they work for, this data is then stored anonymously and used to generate charts and insights.
 
@@ -70,7 +68,7 @@ _Results Page
 
 
 
-You can view the live version here - 
+### [View Live Version!](sur-way.herokuapp.com) 
 
 
 
